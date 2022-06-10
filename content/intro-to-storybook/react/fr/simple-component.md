@@ -1,7 +1,7 @@
 ---
-title: 'Créer un simple composant'
-tocTitle: 'Simple composant'
-description: 'Créer un simple composant en isolation'
+title: 'Créer un composant simple'
+tocTitle: 'Composant simple'
+description: 'Créer un composant simple en isolation'
 commit: 'c07ce59'
 ---
 
@@ -22,7 +22,7 @@ Lorsque nous commençons à construire une `Task` (Tâche), nous écrivons d'abo
 
 Tout d'abord, créons la composante "tâche" et le fichier story qui l'accompagne : `src/components/Task.js` et `src/components/Task.stories.js`.
 
-Nous commencerons par une mise en œuvre de base de `Task` (Tâche), en prenant simplement en compte les attributs dont nous savons que nous en aurons besoin et les deux actions que vous pouvez entreprendre sur une tâche (pour la déplacer entre les listes) :
+Nous commencerons par une mise en œuvre de base de `Task` (Tâche), en prenant simplement en compte les attributs dont nous savons que nous aurons besoin et les deux actions que vous pouvez entreprendre sur une tâche (pour la déplacer entre les listes) :
 
 ```javascript
 // src/components/Task.js
@@ -38,7 +38,7 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
 }
 ```
 
-Ci-dessus, nous rendons un balisage simple pour `Task` basé sur la structure HTML existante de l'application Todos.
+Ci-dessus, nous affichons un balisage simple pour `Task` basé sur la structure HTML existante de l'application Todos.
 
 Ci-dessous, nous allons construire les trois états de test de Task dans le fichier story:
 
@@ -250,7 +250,7 @@ Une autre façon d'atteindre le même objectif est d'utiliser un système de typ
 
 Nous avons maintenant réussi à créer un composant sans avoir besoin d'un serveur ou d'exécuter toute l'application front-end. L'étape suivante consiste à construire les autres composants de la Taskbox un par un, de manière similaire.
 
-Comme vous pouvez le voir, il est facile et rapide de commencer à construire des composants de manière isolée. Nous pouvons nous attendre à produire un UI de meilleure qualité avec moins de bogues et plus de peaufinage car il est possible de se pencher et de tester tous les états possibles.
+Comme vous pouvez le voir, il est facile et rapide de commencer à construire des composants de manière isolée. Nous pouvons nous attendre à produire un UI de meilleure qualité avec moins de bogues et plus aboutie car il est possible de spéficier précisément et tester tous les états possibles.
 
 ## Tests automatisés
 
@@ -258,10 +258,10 @@ Storybook nous a donné un excellent moyen de tester manuellement l'UI de notre 
 
 ### Capture instantanée
 
-La capture instantanée est une pratique qui consiste à enregistrer le "bon" résultat connue d'un composant pour une entrée donnée et à signaler le composant chaque fois que le résultat change à l'avenir. Cela complémente le Storybook, car c'est un moyen rapide de visualiser la nouvelle version d'un composant et de vérifier les changements.
+La capture instantanée est une pratique qui consiste à enregistrer le "bon" résultat connu d'un composant pour une entrée donnée et à signaler le composant chaque fois que le résultat change à l'avenir. C'est un bon complément au Storybook, car c'est un moyen rapide de visualiser la nouvelle version d'un composant et de vérifier les changements.
 
 <div class="aside">
-Assurez-vous que vos composants rendent des données qui ne changent pas, afin que vos captures instantanées n'échouent pas à chaque fois. Faites attention à des éléments comme les dates ou les valeurs générées de manière aléatoire.
+Assurez-vous que vos composants affichent des données qui ne changent pas, afin que vos captures instantanées n'échouent pas à chaque fois. Faites attention à des éléments comme les dates ou les valeurs générées de manière aléatoire.
 </div>
 
 Avec le [Storyshots addon](https://github.com/storybooks/storybook/tree/master/addons/storyshots), une capture d'instantané est créé pour chacune des story. Utilisez-le en ajoutant les dependencies de développement suivantes :
